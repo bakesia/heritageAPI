@@ -1,6 +1,6 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { BsList } from "react-icons/bs";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { BsList, BsHouse } from "react-icons/bs";
 import NavDraw from "./Ui/NavDraw";
 import IndexPage from "./components/indexPage";
 import SearchResultPage from "./components/SearchResultPage";
@@ -9,11 +9,19 @@ import SbyPeriodPage from "./components/SbyPeriodPage";
 import { useState } from "react";
 
 function App() {
+  const navigate = useNavigate();
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <BrowserRouter>
-      <header className="flex justify-end items-center text-2xl p-5 gap-2">
+    <>
+      <header className="flex justify-between items-center text-2xl p-5 gap-2">
+        <button
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <BsHouse />
+        </button>
         <button
           onClick={() => {
             setIsNavOpen(true);
@@ -32,7 +40,7 @@ function App() {
       </main>
 
       {isNavOpen && <NavDraw onClose={() => setIsNavOpen(false)} />}
-    </BrowserRouter>
+    </>
   );
 }
 

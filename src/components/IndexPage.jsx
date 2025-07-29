@@ -33,7 +33,9 @@ export default function IndexPage() {
 
   return (
     <div className="w-full max-w-xl mx-auto p-4">
-      <p className="justify-center items-center flex mt-10 text-3xl">문:해</p>
+      <p className="justify-center items-center flex mt-10 text-3xl font-bold">
+        <span className="text-amber-700">문</span>:해
+      </p>
       <p className="justify-center items-center flex mt-1 text-base">
         문화를 해석하다
       </p>
@@ -46,7 +48,7 @@ export default function IndexPage() {
         />
         <button
           type="submit"
-          className="px-4 bg-blue-400 hover:bg-blue-600 text-white rounded-2xl flex items-center justify-center"
+          className="px-4 bg-amber-700 hover:bg-amber-800 text-white rounded-2xl flex items-center justify-center"
         >
           <BsSearch />
         </button>
