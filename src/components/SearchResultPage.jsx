@@ -74,7 +74,6 @@ export default function SearchResultPage() {
     }
 
     setSortedItems(sorted);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSort, items]);
 
   // 페이지별로 자를 데이터 계산

@@ -61,9 +61,14 @@ export default function IndexPage() {
             className="bg-slate-200 py-1 px-2 rounded-md text-sm font-bold hover:bg-slate-300"
           >
             <button
-              onClick={() =>
-                navigate(`/search?keyword=${encodeURIComponent(word)}`)
-              }
+              onClick={() => {
+                setRecentKeywords((prev) => {
+                  const updated = [word, ...prev.filter((k) => k !== word)];
+                  return updated.slice(0, 5);
+                });
+
+                navigate(`/search?keyword=${encodeURIComponent(word)}`);
+              }}
             >
               {word}
             </button>
